@@ -1,0 +1,30 @@
+$primary-color: rgb(212, 127, 29);
+
+#div_tabs {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+.tabs {
+    font-size: 2vw;
+  
+    .icons {
+      margin-right: 2vw;
+      margin-bottom: 2vw;
+      margin-top: 2vw;
+    }
+  
+    &.active {
+      color: $primary-color;
+      border-top: solid $primary-color 1vh;
+  
+      .icons {
+        color: $primary-color;
+      }
+      .active-text {
+        color: $primary-color;
+      }
+    }
+  }
+  
