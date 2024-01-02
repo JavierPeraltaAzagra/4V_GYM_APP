@@ -1,7 +1,18 @@
-<h1 mat-dialog-title>Popup Dialog</h1>
+<div class="d-flex justify-content-center">
+   <div class="d-flex text-center align-items-center w-25">
+        <i class="fa-solid fa-user fa-7x card-img-top icons pt-3"></i>
+        <i id="plusIcon" class="fa-solid fa-plus icons"></i>
+    </div> 
+</div>
+
 <div mat-dialog-content>
-  <p>This is a popup dialog created using Angular Material.</p>
+    <form [formGroup]="monitorForm" (ngSubmit)="newMonitor()">
+        <input id="name" type="text" formControlName="name" placeholder="Name">
+        <input id="email" type="email" formControlName="email" placeholder="E-mail">
+        <input id="telephone" type="text" formControlName="telephone" placeholder="Telephone">
+    </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="closePopup()">Close</button>
+  <button mat-button (click)="newMonitor()">Accept</button>
+  <button mat-button (click)="closePopup()">Cancel</button>
 </div>

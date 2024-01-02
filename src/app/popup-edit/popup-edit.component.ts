@@ -8,24 +8,21 @@ import { Monitor, MonitorService } from '../Services/monitor.service';
   selector: 'app-popup',
   standalone: true,
   imports: [MatDialogModule, ReactiveFormsModule],
-  templateUrl: './popup.component.html',
-  styleUrl: './popup.component.scss'
+  templateUrl: './popup-edit.component.html',
+  styleUrl: './popup-edit.component.scss'
 })
-export class PopupComponent {
+export class PopupEditComponent {
   monitorService: MonitorService;
 
   constructor(private popupService: PopupService, monitorService: MonitorService) {
     this.monitorService = monitorService;
-    
   }
 
-  
-
-  openPopup() {
+  openPopupEdit() {
     this.popupService.openPopup();
   }
 
-  closePopup(){
+  closePopupEdit(){
     this.popupService.closePopup();
   }
 
@@ -35,12 +32,13 @@ export class PopupComponent {
     telephone: new FormControl(),
   });
   
-  newMonitor(){
-    const newMonitorData: Monitor = {id: 4, name: this.monitorForm.value.name, email: this.monitorForm.value.email, telephone: this.monitorForm.value.telephone};
-    this.monitorService.createMonitorAPI(newMonitorData)
-    .subscribe(response => {
-      this.monitorService.notifyUpdateActivity(null);
-    });
-    this.closePopup();
-  }
+  // editMonitor(){
+  //   this.monitorService.getIdByEmail(this.monitorForm.value.email);
+  //   const editMonitorData: Monitor = {id: id, name: this.monitorForm.value.name, email: this.monitorForm.value.email, telephone: this.monitorForm.value.telephone};
+  //   this.monitorService.editMonitorPopup(editMonitorData)
+  //   .subscribe(response => {
+  //     this.monitorService.notifyUpdateActivity(null);
+  //   });
+  //   this.closePopupEdit();
+  // }
 }
