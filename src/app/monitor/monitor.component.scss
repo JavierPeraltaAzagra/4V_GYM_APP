@@ -1,0 +1,40 @@
+$primary-color: rgb(212, 127, 29);
+$backgroundPrimary: lightgray;
+
+#search{
+  background-color: $backgroundPrimary;
+  border: solid 0.1rem orange;
+  border-radius: 10px;
+  width: 50vw;
+  height: 4vh;
+}
+
+.card {
+  width: 18rem;
+  margin: 5rem;
+  background-color: $backgroundPrimary;
+}
+
+.btn{
+  height: 5vh;
+  align-self: center;
+  border: 0
+}
+
+.container{
+  padding-top: 13vh;
+}
+
+.btn-card{
+  border: 0;
+  padding-top: 1vh;
+  background-color: $backgroundPrimary;
+}
+
+.icons {
+  color: $primary-color;
+}
+
+#div-add{
+  margin-left: 73vw;
+}
