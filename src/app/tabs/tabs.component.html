@@ -1,10 +1,11 @@
 <div id="div_tabs">
     <ul class="nav row">
         <li class="nav-item col-6 tabs text-center" [class.active]="selectedTab == 1" (click)="setActiveTab(1)">
-            <a class="nav-link tabs" [ngClass]="{'active-text': selectedTab == 1}" aria-current="page" href="#"><i class="fa-regular fa-calendar-days fa-2xl icons" [ngClass]="{'active': selectedTab == 1}"></i>ACTIVIDADES</a>
+            <a routerLink="" class="nav-link tabs" [ngClass]="{'active-text': selectedTab == 1}"><i class="fa-regular fa-calendar-days fa-2xl icons" [ngClass]="{'active': selectedTab == 1}"></i>ACTIVIDADES</a>
         </li>
         <li class="nav-item col-6 tabs text-center" [class.active]="selectedTab == 2" (click)="setActiveTab(2)">
-            <a class="nav-link tabs" [ngClass]="{'active-text': selectedTab == 2}" href="#"><i class="fa-solid fa-user fa-2xl icons" [ngClass]="{'active': selectedTab == 2}"></i>MONITORES</a>
+            <a routerLink="/monitors" class="nav-link tabs" [ngClass]="{'active-text': selectedTab == 2}"><i class="fa-solid fa-user fa-2xl icons" [ngClass]="{'active': selectedTab == 2}"></i>MONITORES</a>
         </li>
     </ul> 
 </div>
+<router-outlet></router-outlet>

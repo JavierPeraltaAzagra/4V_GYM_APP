@@ -1,0 +1,88 @@
+<div class="row">
+    <mat-card class="calendar col-3">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+    </mat-card>
+    <div class="col-9 p-0">
+        <div class="d-flex justify-content-center align-items-center divDate pt-4 px-0">
+            <button class="btn" (click)="prev()"><i class="fa-solid fa-angles-left fa-3x icons"></i></button>
+            <h2><span *ngIf="selected != null">{{selected.getDate() + " " + months[selected.getMonth()] + " " + selected.getFullYear()}}</span></h2>
+            <button class="btn" (click)="next()"><i class="fa-solid fa-angles-right fa-3x icons"></i></button>
+        </div>
+        <div class="d-flex mx-5">
+            <div class="pt-5">
+                <div class="d-flex">
+                    <p class="pt-4">10:00 <br> 11:30</p>
+                    <div class="divActivity mx-1" *ngFor="let activity of activities">
+                        <div class="d-flex" *ngIf="activity.beggining_date.getDate() == selected?.getDate() &&  activity.beggining_date.getHours() == 10 && activity.beggining_date.getMinutes() == 00">
+                            <div class="text-center pt-3 px-3" *ngFor="let monitor of activity.monitors">
+                                <i class="fa-solid fa-user fa-3x card-img-top icons"></i>
+                                <p class="icons ">{{ monitor.name }}</p>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == pilates">
+                                <img src="../../assets/img/pilates.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == bodyPump">
+                                <img src="../../assets/img/bodypump.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == spinning">
+                                <img src="../../assets/img/spinning2.png">
+                            </div>
+                            <div>
+                                <button class="btn" (click)="removeActivity(activity.id)"><i class="fa-solid fa-trash-can fa-xl icons"></i></button><br><br>
+                                <button class="btn"><!-- (click)="editActivity(activity.id)" --><i class="fa-solid fa-pencil fa-xl icons"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <p class="pt-4">13:30 <br> 15:00</p>
+                    <div class="divActivity mx-1" *ngFor="let activity of activities">
+                        <div class="d-flex" *ngIf="activity.beggining_date.getDate() == selected?.getDate() &&  activity.beggining_date.getHours() == 13 && activity.beggining_date.getMinutes() == 30">
+                            <div class="text-center pt-3 px-3" *ngFor="let monitor of activity.monitors">
+                                <i class="fa-solid fa-user fa-3x card-img-top icons"></i>
+                                <p class="icons ">{{ monitor.name }}</p>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == pilates">
+                                <img src="../../assets/img/pilates.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == bodyPump">
+                                <img src="../../assets/img/bodypump.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == spinning">
+                                <img src="../../assets/img/spinning2.png">
+                            </div>
+                            <div>
+                                <button class="btn" (click)="removeActivity(activity.id)"><i class="fa-solid fa-trash-can fa-xl icons"></i></button><br><br>
+                                <button class="btn"><!-- (click)="editActivity(activity.id)" --><i class="fa-solid fa-pencil fa-xl icons"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <p class="pt-4">17:30 <br> 19:00</p>
+                    <div class="divActivity mx-1" *ngFor="let activity of activities">
+                        <div class="d-flex" *ngIf="activity.beggining_date.getDate() == selected?.getDate() &&  activity.beggining_date.getHours() == 17 && activity.beggining_date.getMinutes() == 30">
+                            <div class="text-center pt-3 px-3" *ngFor="let monitor of activity.monitors">
+                                <i class="fa-solid fa-user fa-3x card-img-top icons"></i>
+                                <p class="icons ">{{ monitor.name }}</p>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == pilates">
+                                <img src="../../assets/img/pilates.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == bodyPump">
+                                <img src="../../assets/img/bodypump.png">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center" *ngIf="activity.activity_type == spinning">
+                                <img src="../../assets/img/spinning2.png">
+                            </div>
+                            <div>
+                                <button class="btn" (click)="removeActivity(activity.id)"><i class="fa-solid fa-trash-can fa-xl icons"></i></button><br><br>
+                                <button class="btn"><!-- (click)="editActivity(activity.id)" --><i class="fa-solid fa-pencil fa-xl icons"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

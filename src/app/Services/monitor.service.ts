@@ -9,6 +9,7 @@ const apiURL = 'https://65946a0b1493b011606a7b46.mockapi.io/4VGym';
 })
 export class MonitorService {
   constructor(private http: HttpClient) { }
+  
   updateSubject: ReplaySubject<any> = new ReplaySubject();
   changesOnActivities: Observable<any> = this.updateSubject.asObservable();
 
